@@ -21,6 +21,27 @@ body{
     padding: 10px;
 }
 
+#add{
+    display: flex;
+    background-color: #32475f;
+    border-radius: 100px;
+    border: none;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    cursor: grab;
+}
+#add:hover{
+    transform: scale(1.1);
+}
+#add:active{
+    transform:scale(.9)
+}
 
 
 
