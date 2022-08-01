@@ -1,1 +1,23 @@
 /* styles for todo list */
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    height: 5vh;
+    background-color: #333333;
+  }
