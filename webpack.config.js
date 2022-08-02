@@ -4,7 +4,8 @@ module.exports = {
     mode: 'development',
   entry: {
     index: './src/index.js',
-    taskcreate: './src/taskcreate.js'
+    taskcreate: './src/taskcreate.js',
+    blur: './src/taskprompt.js',
   },
   output: {
     filename: '[name].bundle.js',

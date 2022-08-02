@@ -1,9 +1,16 @@
 /* styles for todo list */
 body{
+
+}
+.container{    
     display: grid;
     grid-template: 1fr auto / 200px auto;
     background-color: #33333321;
-
+}
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
 }
 #header{
     background-color: #32475f;
