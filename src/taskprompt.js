@@ -3,9 +3,8 @@
 export default function toggle(){
     const blur = document.getElementById('blur');
     blur.classList.toggle('active')
-    const taskform = document.createElement('div')
-    taskform.classList = 'newtask'
-    taskform.innerHTML
+    const container = document.getElementById('taskform')
+    container.classList.toggle('invisible')
+    const cancel = document.getElementById('cancel')
+    cancel.addEventListener('click', toggle)
 }
-
- 

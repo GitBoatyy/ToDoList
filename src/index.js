@@ -5,6 +5,8 @@ import toggle from './taskprompt' //creates form to import new task data from
 
 const addButton = document.getElementById('add')
 
+
+
 let tasks = []
 let projects = []
 

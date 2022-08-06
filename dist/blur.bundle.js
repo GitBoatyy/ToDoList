@@ -16,7 +16,7 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ toggle)\n/* harmony export */ });\n\n\nfunction toggle(){\n    const blur = document.getElementById('blur');\n    blur.classList.toggle('active')\n    const taskform = document.createElement('div')\n    taskform.classList = 'newtask'\n    taskform.innerHTML\n}\n\n \n\n//# sourceURL=webpack://todolist/./src/taskprompt.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ toggle)\n/* harmony export */ });\n\n\nfunction toggle(){\n    const blur = document.getElementById('blur');\n    blur.classList.toggle('active')\n    const container = document.getElementById('taskform')\n    container.classList.toggle('invisible')\n    const cancel = document.getElementById('cancel')\n    cancel.addEventListener('click', toggle)\n}\n\n//# sourceURL=webpack://todolist/./src/taskprompt.js?");
 
 /***/ })
 

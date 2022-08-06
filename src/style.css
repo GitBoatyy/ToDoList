@@ -50,11 +50,32 @@ body{
     transform:scale(.9)
 }
 
+.newtask{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    position: fixed ;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2rem 4rem rgb(0 0 0 / 60%);
+}
 
 
+#taskform.invisible{
+    visibility: hidden;
+}
 
+#taskdate{
+    width: 105px;
+}
 
-
+#taskdets{
+    height: 84px;
+    text-align: start;
+}
 
 .footer {
     position: fixed;
