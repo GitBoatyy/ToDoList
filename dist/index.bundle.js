@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _taskcreate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskcreate */ \"./src/taskcreate.js\");\n/* harmony import */ var _taskprompt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskprompt */ \"./src/taskprompt.js\");\n\n //creates new object with task data\n //creates form to import new task data from\n\n\nconst addButton = document.getElementById('add')\n\n\n\nlet tasks = []\nlet projects = []\n\n\naddButton.addEventListener('click', _taskprompt__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _taskcreate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskcreate */ \"./src/taskcreate.js\");\n/* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./project */ \"./src/project.js\");\n/* harmony import */ var _taskprompt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./taskprompt */ \"./src/taskprompt.js\");\n\n //creates new object with task data\n\n //shows form to import new task data from and makes form invisible with cancel button\n\nconst addButton = document.getElementById('add')\nconst title = document.getElementById('taskname')\nconst details = document.getElementById('taskdets')\nconst dueDate = document.getElementById('taskdate')\nconst submit = document.getElementById('submit')\n\nlet tasks = []\nlet projects = []\n\n\nfunction addTask(){\n    let task = new _taskcreate__WEBPACK_IMPORTED_MODULE_1__[\"default\"](title.value, details.value, dueDate.value)\n    tasks.push(task)\n    console.log(tasks)\n    ;(0,_taskprompt__WEBPACK_IMPORTED_MODULE_3__[\"default\"])()\n    title.value = ''\n    details.value = ''\n    dueDate.value = ''\n}\n\nsubmit.addEventListener('click', addTask)\naddButton.addEventListener('click', _taskprompt__WEBPACK_IMPORTED_MODULE_3__[\"default\"])\n\n\n//# sourceURL=webpack://todolist/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/project.js":
+/*!************************!*\
+  !*** ./src/project.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"projects\": () => (/* binding */ projects)\n/* harmony export */ });\nclass projects {\n    constructor(project){\n        this.project = project\n    }\n}\n\n//# sourceURL=webpack://todolist/./src/project.js?");
 
 /***/ }),
 
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ newTask)\n/* harmony export */ });\n// this contains the constructor to make a new task\n\nfunction newTask(description, priority, duedate){\n    this.description = description\n    this.priority = priority\n    this.duedate = duedate\n}\n\n//# sourceURL=webpack://todolist/./src/taskcreate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ newTask)\n/* harmony export */ });\n// this contains the constructor to make a new task\n\nclass newTask{\n    constructor(title, description, duedate){\n    this.name = title\n    this.title = title\n    this.description = description\n    this.duedate = duedate\n    }\n}\n\n\n//# sourceURL=webpack://todolist/./src/taskcreate.js?");
 
 /***/ }),
 

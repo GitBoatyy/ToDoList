@@ -16,7 +16,7 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ newTask)\n/* harmony export */ });\n// this contains the constructor to make a new task\n\nfunction newTask(description, priority, duedate){\n    this.description = description\n    this.priority = priority\n    this.duedate = duedate\n}\n\n//# sourceURL=webpack://todolist/./src/taskcreate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ newTask)\n/* harmony export */ });\n// this contains the constructor to make a new task\n\nclass newTask{\n    constructor(title, description, duedate){\n    this.name = title\n    this.title = title\n    this.description = description\n    this.duedate = duedate\n    }\n}\n\n\n//# sourceURL=webpack://todolist/./src/taskcreate.js?");
 
 /***/ })
 

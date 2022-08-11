@@ -9,11 +9,11 @@
 <body>
 <div class="container" id="blur">
     <div id="header">*TO-DO </div>
-    <div id="navbar">
-        <div id="all">All</div>
-        <div id="projects">Projects</div>
+    <ul id="navbar">
+        <li>All</li>
+        <li>projects</li>
         <button id="add">+</button>
-    </div>
+    </ul>
     <div id="taskinfo">
     </div>
     <div class = footer>
@@ -26,9 +26,9 @@
             <input name="Title" id="taskname" placeholder="Title">
             <textarea name="Details" id="taskdets" placeholder="Details"></textarea>
             <label for="Date">Due Date</label>
-            <input type="date" name="Date" id="taskdate">
+            <input type="date" name="Date" id="taskdate" value="">
             <button type="button" id="cancel">Cancel</button>
-            <button type="button">Submit</button> 
+            <button type="button" id="submit">Submit</button> 
     </div>
 </div>    
 </body>
