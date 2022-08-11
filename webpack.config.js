@@ -7,6 +7,7 @@ module.exports = {
     taskcreate: './src/taskcreate.js',
     blur: './src/taskprompt.js',
     project: './src/project.js',
+    showtask: './src/showtask.js',
   },
   output: {
     filename: '[name].bundle.js',
