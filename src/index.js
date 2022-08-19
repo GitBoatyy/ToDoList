@@ -10,6 +10,7 @@ const details = document.getElementById('taskdets')
 const dueDate = document.getElementById('taskdate')
 const submit = document.getElementById('submit')
 const taskinfo = document.getElementById('taskinfo')
+const removeb = document.getElementById('remove')
 
 let tasks = []
 let projects = []
@@ -27,12 +28,29 @@ function addTask(){
 
 
 function printtasks() {
+    taskinfo.replaceChildren()
     tasks.forEach((task, index) => {
         showtasks(task, index);
     });
 }
 
+function removeTask(e){
+    let num = e.target
+    console.log(num.id)
+
+}
+
+
+function someListener(event){
+    let element = event.target;
+    if(element.classList == 'remove'){
+        tasks.splice(element.id)
+        printtasks()
+    } else{
+    }
+}
+
 submit.addEventListener('click', addTask)
 submit.addEventListener('click', printtasks)
 addButton.addEventListener('click', toggle)
-
+document.addEventListener('click', someListener)

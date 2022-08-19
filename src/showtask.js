@@ -18,6 +18,13 @@ export default function showtasks(task, index){
     duedate.classList.add('taskduedate')
     duedate.innerText = task.duedate
     newtaskdiv.append(duedate)
-    taskinfo.append(newtaskdiv)
     
+    const remove = document.createElement('button')
+    remove.innerText = 'Remove'
+    remove.classList = 'remove'
+    remove.id = index
+    remove.setAttribute('data', index)
+    newtaskdiv.append(remove)
+    taskinfo.append(newtaskdiv)
+
 }
