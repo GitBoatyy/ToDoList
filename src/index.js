@@ -1,56 +1,67 @@
-import './style.css';
-import newTask from './taskcreate' //creates new object with task data
-import project from './project'
-import toggle from './taskprompt' //shows form to import new task data from and makes form invisible with cancel button
-import showtasks from './showtask'
+import "./style.css";
+import newTask from "./taskcreate"; //creates new object with task data
+import project from "./project";
+import toggle from "./taskprompt"; //shows form to import new task data from and makes form invisible with cancel button
+import showtasks from "./showtask";
 
-const addButton = document.getElementById('add')
-const title = document.getElementById('taskname')
-const details = document.getElementById('taskdets')
-const dueDate = document.getElementById('taskdate')
-const submit = document.getElementById('submit')
-const taskinfo = document.getElementById('taskinfo')
-const removeb = document.getElementById('remove')
+const addButton = document.getElementById("add");
+const title = document.getElementById("taskname");
+const details = document.getElementById("taskdets");
+const dueDate = document.getElementById("taskdate");
+const submit = document.getElementById("submit");
+const taskinfo = document.getElementById("taskinfo");
+const removeb = document.getElementById("remove");
+const storedtasks = JSON.parse(localStorage.getItem('tasks'))
 
-let tasks = []
-let projects = []
+let tasks = [];
+let projects = [];
 
-
-function addTask(){
-    let task = new newTask(title.value, details.value, dueDate.value)
-    tasks.push(task)
-    console.log(tasks)
-    toggle()
-    title.value = ''
-    details.value = ''
-    dueDate.value = ''
+function addTask() {
+  let task = new newTask(title.value, details.value, dueDate.value);
+  tasks.push(task);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  toggle();
+  title.value = "";
+  details.value = "";
+  dueDate.value = "";
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
-
 
 function printtasks() {
-    taskinfo.replaceChildren()
-    tasks.forEach((task, index) => {
-        showtasks(task, index);
-    });
+  if (storedtasks == null){
+  }else{
+  taskinfo.replaceChildren();
+  tasks = storedtasks
+  tasks.forEach((task, index) => {
+    showtasks(task, index);
+  });
+}
 }
 
-function removeTask(e){
-    let num = e.target
-    console.log(num.id)
 
+function someListener(event) {
+  let element = event.target;
+  if (element.classList == "remove") {
+    tasks.splice(element.id, 1);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    printtasks();
+  } else {
+  }
 }
 
+submit.addEventListener("click", addTask);
+submit.addEventListener("click", printtasks);
+addButton.addEventListener("click", toggle);
+document.addEventListener("click", someListener);
 
-function someListener(event){
-    let element = event.target;
-    if(element.classList == 'remove'){
-        tasks.splice(element.id)
-        printtasks()
-    } else{
-    }
-}
+let task1 = new newTask('task', 'details', '2022-08-11');
+tasks.push(task1);
+let task2 = new newTask('task', 'details', '2022-08-11');
+tasks.push(task2);
+let task3 = new newTask('task', 'details', '2022-08-11');
+tasks.push(task3);
 
-submit.addEventListener('click', addTask)
-submit.addEventListener('click', printtasks)
-addButton.addEventListener('click', toggle)
-document.addEventListener('click', someListener)
+
+
+
+printtasks()
