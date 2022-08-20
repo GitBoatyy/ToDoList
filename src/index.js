@@ -3,14 +3,16 @@ import newTask from "./taskcreate"; //creates new object with task data
 import project from "./project";
 import toggle from "./taskprompt"; //shows form to import new task data from and makes form invisible with cancel button
 import showtasks from "./showtask";
+import {format} from 'date-fns';
 
+
+const today = (format(new Date(), "yyyy-MM-dd"));
 const addButton = document.getElementById("add");
 const title = document.getElementById("taskname");
 const details = document.getElementById("taskdets");
 const dueDate = document.getElementById("taskdate");
 const submit = document.getElementById("submit");
 const taskinfo = document.getElementById("taskinfo");
-const removeb = document.getElementById("remove");
 const storedtasks = JSON.parse(localStorage.getItem('tasks'))
 
 let tasks = [];
@@ -39,7 +41,7 @@ function printtasks() {
 }
 
 
-function someListener(event) {
+  function someListener(event) {
   let element = event.target;
   if (element.classList == "remove") {
     tasks.splice(element.id, 1);
@@ -47,7 +49,7 @@ function someListener(event) {
     printtasks();
   } else {
   }
-}
+  }
 
 submit.addEventListener("click", addTask);
 submit.addEventListener("click", printtasks);

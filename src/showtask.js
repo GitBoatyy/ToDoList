@@ -1,3 +1,8 @@
+
+import {format} from 'date-fns';
+
+
+const today = (format(new Date(), "yyyy-MM-dd"));
 export default function showtasks(task, index) {
     const newtaskdiv = document.createElement("div");
     newtaskdiv.id = "taskdiv";
@@ -17,6 +22,9 @@ export default function showtasks(task, index) {
     const duedate = document.createElement("div");
     duedate.classList.add("taskduedate");
     duedate.innerText = task.duedate;
+    if (task.duedate < today){
+      duedate.classList.add("redf");
+    }else{}
     newtaskdiv.append(duedate);
   
     const remove = document.createElement("button");

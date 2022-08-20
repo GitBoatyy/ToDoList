@@ -4,6 +4,7 @@ body{
  border: none;
 
 }
+
 .container{    
     width: 100vw;
     display: grid;
@@ -26,10 +27,12 @@ body{
 }
 
 #navbar{
-    background-color: #3333334d;
+    background-color: #968a8a4d;
     height: 85vh;
     padding: 20px;
     margin: 0;
+    border-right: 1px solid #333333b4;
+    font-size: larger;
 }
 
 #add{
@@ -46,6 +49,7 @@ body{
     position: absolute;
     bottom: 50px;
     cursor: grab;
+    box-shadow: inset;
 }
 #add:hover{
     transform: scale(1.1);
@@ -83,17 +87,49 @@ body{
 .task{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
+    border-bottom: 1px solid #3333332b;
+    border-top: 1px solid #3333332b;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 5px;
+    margin: 2px;
+    background-color: #968a8a4d;
+    box-shadow: inset;
+
 }
 
 .tasktitle{
     grid-column-start: 1;
     grid-column-end: 5;
+    font-weight: bold;
+    border-bottom: 1px solid #3333332b;
+}
+
+.taskdetails{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.taskduedate{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    text-align: end;
+}
+
+.redf{
+    color: red;
 }
 
 .remove{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    align-items: end;
     width: 50%;
     height: 21.5px;
+}
+
+#taskinfo{
+    padding: 10px;
 }
 
 .footer {
